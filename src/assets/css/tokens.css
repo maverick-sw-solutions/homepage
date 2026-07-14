@@ -1,0 +1,189 @@
+/* ================================================================
+   MAVERICK SOFTWARE SOLUTIONS — Design Tokens
+   Kanit · Burgundy · Light-first
+   Source: Claude Design project "Maverick design system" (082b4034)
+   ================================================================ */
+
+@font-face { font-family: 'Kanit'; font-style: normal; font-weight: 400; font-display: swap; src: url('/assets/fonts/Kanit-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Kanit'; font-style: normal; font-weight: 500; font-display: swap; src: url('/assets/fonts/Kanit-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'Kanit'; font-style: normal; font-weight: 600; font-display: swap; src: url('/assets/fonts/Kanit-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'Kanit'; font-style: normal; font-weight: 700; font-display: swap; src: url('/assets/fonts/Kanit-Bold.ttf') format('truetype'); }
+
+:root {
+  /* 1 · Core palette */
+  --mss-burgundy: #7D1128;
+  --mss-burgundy-deep: #550C1C;
+  --mss-tint: #F7EBED;
+  --mss-highlight: #FFCCD5;
+
+  --mss-ink: #1A1A1A;
+  --mss-ink-2: #555555;
+  --mss-ink-3: #8A8A8A;
+
+  --mss-bg: #FAFAFA;
+  --mss-bg-2: #FFFFFF;
+  --mss-bg-3: #F2F2F2;
+
+  --mss-success: #2E7D32;
+  --mss-success-tint: #E6F0E7;
+  --mss-warning: #C18B00;
+  --mss-warning-tint: #FFF3C4;
+
+  --mss-line: #E4E4E4;
+  --mss-line-strong: #D0D0D0;
+  --mss-line-burgundy: rgba(125, 17, 40, 0.20);
+
+  /* 2 · Semantic aliases */
+  --fg-1: var(--mss-ink);
+  --fg-2: var(--mss-ink-2);
+  --fg-3: var(--mss-ink-3);
+  --fg-inv: #FFFFFF;
+
+  --bg-1: var(--mss-bg);
+  --bg-2: var(--mss-bg-2);
+  --bg-3: var(--mss-bg-3);
+
+  --accent: var(--mss-burgundy);
+  --accent-deep: var(--mss-burgundy-deep);
+  --accent-tint: var(--mss-tint);
+  --accent-hi: var(--mss-highlight);
+
+  --line: var(--mss-line);
+  --line-strong: var(--mss-line-strong);
+
+  /* 3 · Type */
+  --font-sans: "Kanit", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+  --fs-display: 48px;
+  --fs-h1: 34px;
+  --fs-h2: 26px;
+  --fs-h3: 20px;
+  --fs-h4: 17px;
+  --fs-body: 15px;
+  --fs-body-sm: 13px;
+  --fs-caption: 12px;
+  --fs-overline: 11px;
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.45;
+  --lh-loose: 1.6;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --ls-tight: -0.02em;
+  --ls-uppercase: 0.08em;
+
+  /* 4 · Radius */
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-2xl: 28px;
+  --r-pill: 9999px;
+
+  /* 5 · Elevation */
+  --shadow-1: 0 1px 2px rgba(26,26,26,0.06), 0 1px 1px rgba(26,26,26,0.04);
+  --shadow-2: 0 4px 12px rgba(26,26,26,0.07), 0 1px 2px rgba(26,26,26,0.04);
+  --shadow-burgundy: 0 8px 24px rgba(125,17,40,0.22);
+}
+
+/* Explicit light theme — used when the toggle picks "claro" (overrides system dark preference) */
+[data-theme="light"] {
+  --bg-1:#FAFAFA; --bg-2:#FFFFFF; --bg-3:#F2F2F2;
+  --fg-1:#1A1A1A; --fg-2:#555555; --fg-3:#8A8A8A; --fg-inv:#FFFFFF;
+  --accent:#7D1128; --accent-deep:#550C1C; --accent-tint:#F7EBED; --accent-hi:#FFCCD5;
+  --line:#E4E4E4; --line-strong:#D0D0D0; --mss-line-burgundy:rgba(125,17,40,0.20);
+  --mss-success:#2E7D32; --mss-success-tint:#E6F0E7; --mss-warning:#C18B00; --mss-warning-tint:#FFF3C4;
+  --shadow-1:0 1px 2px rgba(26,26,26,0.06), 0 1px 1px rgba(26,26,26,0.04);
+  --shadow-2:0 4px 12px rgba(26,26,26,0.07), 0 1px 2px rgba(26,26,26,0.04);
+  --shadow-burgundy:0 8px 24px rgba(125,17,40,0.22);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg-1: #121212;
+  --bg-2: #1E1E1E;
+  --bg-3: #181818;
+
+  --fg-1: #F0F0F0;
+  --fg-2: #9A9A9A;
+  --fg-3: #5C5C5C;
+  --fg-inv: #121212;
+
+  --accent: #E85870;
+  --accent-deep: #F08898;
+  --accent-tint: #2A1318;
+  --accent-hi: #4A1E26;
+
+  --line: #2A2A2A;
+  --line-strong: #3A3A3A;
+  --mss-line-burgundy: rgba(232,88,112,0.22);
+
+  --mss-success: #52C457;
+  --mss-success-tint: #162318;
+  --mss-warning: #FFBF4D;
+  --mss-warning-tint: #231D0E;
+
+  --shadow-1: 0 1px 3px rgba(0,0,0,0.40), 0 1px 2px rgba(0,0,0,0.25);
+  --shadow-2: 0 4px 14px rgba(0,0,0,0.50), 0 1px 3px rgba(0,0,0,0.30);
+  --shadow-burgundy: 0 8px 24px rgba(232,88,112,0.35);
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-1: #121212;
+    --bg-2: #1E1E1E;
+    --bg-3: #181818;
+    --fg-1: #F0F0F0;
+    --fg-2: #9A9A9A;
+    --fg-3: #5C5C5C;
+    --fg-inv: #121212;
+    --accent: #E85870;
+    --accent-deep: #F08898;
+    --accent-tint: #2A1318;
+    --accent-hi: #4A1E26;
+    --line: #2A2A2A;
+    --line-strong: #3A3A3A;
+    --mss-line-burgundy: rgba(232,88,112,0.22);
+    --mss-success: #52C457;
+    --mss-success-tint: #162318;
+    --mss-warning: #FFBF4D;
+    --mss-warning-tint: #231D0E;
+    --shadow-1: 0 1px 3px rgba(0,0,0,0.40), 0 1px 2px rgba(0,0,0,0.25);
+    --shadow-2: 0 4px 14px rgba(0,0,0,0.50), 0 1px 3px rgba(0,0,0,0.30);
+    --shadow-burgundy: 0 8px 24px rgba(232,88,112,0.35);
+    color-scheme: dark;
+  }
+}
+
+html, body {
+  margin: 0;
+  background: var(--bg-1);
+  color: var(--fg-1);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-deep); }
+
+.section-label {
+  font-size: var(--fs-overline);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-uppercase);
+  color: var(--fg-2);
+  margin-bottom: 14px;
+}

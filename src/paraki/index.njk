@@ -1,0 +1,57 @@
+---
+layout: base.njk
+title: Paraki — Maverick Software Solutions
+description: Mapeamento colaborativo de bicicletários e paraciclos.
+home: false
+pageLabel: Paraki
+---
+{% from "macros/components.njk" import audienceCard, step, btn, contactCard %}
+
+<section id="hero" class="hero">
+  <div class="hero__blob hero__blob--tl"></div>
+  <div class="hero__inner">
+    <div class="hero__eyebrow">Paraki</div>
+    <h1 class="hero__title hero__title--tight">Mapeamento colaborativo de bicicletários e paraciclos — infraestrutura de apoio para quem pedala, em um só lugar.</h1>
+    <div class="hero__media hero__media--md">
+      <i class="fa-solid fa-map-location-dot"></i>
+      <span>screenshot do mapa em uso</span>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona" class="section section--narrow">
+  <div class="section-label">Como funciona</div>
+  <div class="steps">
+    {{ step(1, "Qualquer pessoa pode cadastrar um bicicletário ou paraciclo no mapa") }}
+    {{ step(2, "Cada cadastro inclui localização, fotos e informações (capacidade, tipo, condição)") }}
+    {{ step(3, "Todo envio passa por moderação antes de ser publicado") }}
+    {{ step(4, "Colaboradores com reputação conquistada podem enviar sem moderação prévia — mas todo cadastro segue sujeito a revisão humana") }}
+  </div>
+</section>
+
+<section id="para-quem-e" class="section section--bordered">
+  <div class="section--medium">
+    <div class="section-label section-label--center">Para quem é</div>
+    <div class="audience-grid">
+      {{ audienceCard("fa-solid fa-bicycle", "Ciclistas/usuários", "Encontram bicicletários e paraciclos perto de onde estão") }}
+      {{ audienceCard("fa-solid fa-store", "Estabelecimentos", "Visibilidade gratuita do próprio bicicletário para quem já pedala e busca onde estacionar") }}
+      {{ audienceCard("fa-solid fa-landmark", "Poder público/pesquisa", "Dado aberto sobre infraestrutura real de bicicletários na cidade") }}
+    </div>
+  </div>
+</section>
+
+<section id="status" class="section status-block">
+  <div class="section-label">Status atual</div>
+  <div class="status-list">
+    <p><i class="fa-solid fa-tower-broadcast text-success"></i>No ar em <a href="https://paraki.mavericksoftware.com.br/">paraki.mavericksoftware.com.br</a></p>
+    <p>App em teste na Play Store (screenshots a caminho); iOS em breve</p>
+    <p>Sem números/métricas publicados por enquanto</p>
+  </div>
+</section>
+
+<section id="contato" class="contact-section">
+  {% call contactCard(heading="Quer saber mais sobre o Paraki? Fale com a gente.") %}
+    {{ btn("mailto:contato@mavericksoftware.com.br", "fa-solid fa-envelope", "E-mail", "primary") }}
+    {{ btn("https://wa.me/5511940035698", "fa-brands fa-whatsapp", "WhatsApp", "secondary") }}
+  {% endcall %}
+</section>

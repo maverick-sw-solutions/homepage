@@ -1,0 +1,71 @@
+---
+layout: base.njk
+title: TupiJuá — Maverick Software Solutions
+description: App de treino e acompanhamento fitness, pronto para virar o seu.
+home: false
+pageLabel: TupiJuá
+---
+{% from "macros/components.njk" import featureCard, audienceCard, btn, contactCard %}
+
+<section id="hero" class="hero">
+  <div class="hero__blob hero__blob--tr"></div>
+  <div class="hero__inner hero__inner--narrow">
+    <div class="hero__eyebrow">TupiJuá</div>
+    <h1 class="hero__title hero__title--tight">App de treino e acompanhamento fitness — simples de usar, pronto para virar o seu.</h1>
+    <div class="hero__media hero__media--sm">
+      <i class="fa-solid fa-dumbbell"></i>
+      <span>screenshots/mockups do app</span>
+    </div>
+  </div>
+</section>
+
+<section id="funcionalidades" class="section section--medium">
+  <div class="section-label section-label--center">Funcionalidades</div>
+  <div class="feature-grid">
+    {{ featureCard("fa-solid fa-stopwatch", "", "Registro de treinos, livres ou a partir de um plano cadastrado") }}
+    {{ featureCard("fa-solid fa-clipboard-list", "", "Cadastro de planos de treino personalizados") }}
+    {{ featureCard("fa-solid fa-chart-line", "", "Acompanhamento de métricas e evolução com gráficos") }}
+  </div>
+</section>
+
+<section id="para-quem-e" class="section section--bordered">
+  <div class="section--900">
+    <div class="section-label section-label--center">Para quem é</div>
+    <div class="audience-grid audience-grid--split">
+      {{ audienceCard("fa-solid fa-person-running", "Usuário final", "App de treino completo — do registro à evolução da sua performance", false, true) }}
+      {{ audienceCard("fa-solid fa-tags", "Parceiro (white-label)", "Base pronta para rebrandear e oferecer como produto próprio", true) }}
+    </div>
+  </div>
+</section>
+
+<section id="parceria" class="section section--narrow section--center">
+  <div class="hero__eyebrow">Parceria / White-label</div>
+  <p class="about__text">O TupiJuá está pronto para virar a base de um produto com a sua marca. Ainda estamos definindo o melhor formato de parceria — e é justamente por isso que vale conversar: o modelo pode ser desenhado junto com quem tiver interesse real.</p>
+</section>
+
+<section id="status" class="section status-block">
+  <div class="section-label">Status atual</div>
+  <div class="status-list">
+    <p>App nativo — Android em desenvolvimento; iOS no futuro</p>
+    <p>Fase de validação própria; sem usuários externos ainda</p>
+    <p>Sem URL pública no momento</p>
+  </div>
+</section>
+
+<section id="contato" class="contact-section">
+  {% call contactCard(heading="Quer conversar sobre uma parceria white-label?") %}
+    {{ btn("https://wa.me/5511940035698?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20parceria%20white-label%20com%20o%20TupiJu%C3%A1.", "fa-brands fa-whatsapp", "Falar no WhatsApp", "primary") }}
+    {{ btn("mailto:contato@mavericksoftware.com.br?subject=Parceria%20TupiJu%C3%A1", "fa-solid fa-envelope", "Enviar e-mail", "secondary") }}
+  {% endcall %}
+
+  <div class="contact-card contact-card--neutral">
+    <h2>Quer ser avisado quando o TupiJuá for lançado?</h2>
+    <form class="waitlist-form" id="waitlist-form" novalidate>
+      <input type="email" name="email" placeholder="seu@email.com" required>
+      <button type="submit" class="btn btn--dark">Quero ser avisado</button>
+    </form>
+    <div class="waitlist-form__status" id="waitlist-status" role="status"></div>
+  </div>
+</section>
+
+<script src="/assets/js/waitlist.js"></script>

@@ -1,0 +1,17 @@
+{% if home %}
+  <a href="#hero" class="site-header__brand site-header__brand--home">Maverick Software Solutions</a>
+  <div class="site-header__group">
+    <nav class="site-nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    {% include "partials/theme-toggle.njk" %}
+  </div>
+{% else %}
+  <a href="/" class="site-header__brand"><i class="fa-solid fa-arrow-left"></i> Maverick Software Solutions</a>
+  <div class="site-header__right">
+    {% include "partials/theme-toggle.njk" %}
+    <span class="badge-page">{{ pageLabel }}</span>
+  </div>
+{% endif %}

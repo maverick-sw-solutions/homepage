@@ -1,0 +1,58 @@
+{% macro btn(href, icon, label, variant="primary") %}
+<a href="{{ href }}" class="btn btn--{{ variant }}"><i class="{{ icon }}"></i> {{ label }}</a>
+{% endmacro %}
+
+{% macro projectCard(href, mediaLabel, title, badgeText, badgeVariant, desc) %}
+<a href="{{ href }}" class="project-card">
+  <div class="project-card__media">
+    <i class="fa-regular fa-images"></i>
+    <span>{{ mediaLabel }}</span>
+  </div>
+  <div class="project-card__body">
+    <div class="project-card__head">
+      <h3 class="project-card__title">{{ title }}</h3>
+      <span class="badge badge--{{ badgeVariant }}">{{ badgeText }}</span>
+    </div>
+    <p class="project-card__desc">{{ desc }}</p>
+    <span class="project-card__cta">Saiba mais →</span>
+  </div>
+</a>
+{% endmacro %}
+
+{% macro featureCard(icon, title, text) %}
+<div class="feature-card">
+  <div class="feature-card__icon"><i class="{{ icon }}"></i></div>
+  {% if title %}<h3>{{ title }}</h3>{% endif %}
+  <p>{{ text }}</p>
+</div>
+{% endmacro %}
+
+{% macro audienceCard(icon, title, text, featured=false, muted=false) %}
+<div class="audience-card{% if featured %} audience-card--featured{% endif %}{% if muted %} audience-card--muted{% endif %}">
+  <i class="{{ icon }}"></i>
+  <h3>{{ title }}</h3>
+  <p>{{ text }}</p>
+</div>
+{% endmacro %}
+
+{% macro step(num, text) %}
+<div class="step">
+  <div class="step__num">{{ num }}</div>
+  <p class="step__text">{{ text | safe }}</p>
+</div>
+{% endmacro %}
+
+{% macro pill(text) %}
+<span class="pill">{{ text }}</span>
+{% endmacro %}
+
+{% macro contactCard(heading, eyebrow="", subtitle="", neutral=false) %}
+<div class="contact-card{% if neutral %} contact-card--neutral{% endif %}">
+  {% if eyebrow %}<div class="contact-card__eyebrow">{{ eyebrow }}</div>{% endif %}
+  <h2>{{ heading | safe }}</h2>
+  {% if subtitle %}<p class="subtitle">{{ subtitle }}</p>{% endif %}
+  <div class="contact-card__actions">
+    {{ caller() }}
+  </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,58 @@
+---
+layout: base.njk
+title: Maverick Event Solutions (M-ES) — Maverick Software Solutions
+description: Carteira virtual para eventos — carga, consumo e prestação de contas em um só sistema, sem fila e sem troco.
+home: false
+pageLabel: M-ES
+---
+{% from "macros/components.njk" import featureCard, pill, btn, contactCard %}
+
+<section id="hero" class="hero">
+  <div class="hero__blob hero__blob--tl"></div>
+  <div class="hero__inner">
+    <div class="hero__eyebrow">Maverick Event Solutions (M-ES)</div>
+    <h1 class="hero__title hero__title--tighter">Carteira virtual para eventos — carga, consumo e prestação de contas em um só sistema, sem fila e sem troco.</h1>
+    <div class="hero__media hero__media--lg">
+      <i class="fa-solid fa-wallet"></i>
+      <span>mockups do painel / app</span>
+    </div>
+  </div>
+</section>
+
+<section id="funcionalidades" class="section section--medium">
+  <div class="section-label section-label--center">Funcionalidades</div>
+  <div class="feature-grid">
+    {{ featureCard("fa-solid fa-qrcode", "Carga", "Via gateway de pagamento — Mercado Pago, Stripe ou a própria adquirente que o organizador já usa.") }}
+    {{ featureCard("fa-solid fa-cash-register", "PDV", "Débito por leitura de QR Code (no app ou em cartão plástico) ou por número de conta personalizável + senha. Funciona em qualquer hardware com internet.") }}
+    {{ featureCard("fa-solid fa-chart-pie", "Painel administrativo", "Acompanhamento em tempo real de vendas, saldo e todos os dados operacionais — visão completa para fechamento de caixa.") }}
+  </div>
+</section>
+
+<section id="para-quem-e" class="section section--bordered section--center">
+  <div class="section--narrow">
+    <div class="section-label">Para quem é</div>
+    <p class="about__text about__text--sm">Feito para qualquer evento que movimenta dinheiro: festas escolares, eventos corporativos, feiras, festivais e associações — qualquer organizador que precise de controle financeiro sem fila e sem risco de descontrole de caixa.</p>
+    <div class="pills">
+      {{ pill("Festas escolares") }}
+      {{ pill("Eventos corporativos") }}
+      {{ pill("Feiras e festivais") }}
+      {{ pill("Associações e clubes") }}
+    </div>
+  </div>
+</section>
+
+<section id="status" class="section status-block">
+  <div class="status-pill">MVP</div>
+  <div class="status-list">
+    <p>MVP em desenvolvimento; lançamento em breve</p>
+    <p>Ainda sem uso em evento real — sem prova social/números publicados por enquanto</p>
+    <p>Demonstração feita pessoalmente/por chamada; sem ambiente de teste self-service no momento</p>
+  </div>
+</section>
+
+<section id="contato" class="contact-section">
+  {% call contactCard(heading="Quer ver o M-ES funcionando?") %}
+    {{ btn("https://wa.me/5511940035698?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20demonstra%C3%A7%C3%A3o%20do%20M-ES.", "fa-brands fa-whatsapp", "Solicitar demonstração", "primary") }}
+    {{ btn("mailto:contato@mavericksoftware.com.br?subject=Demonstra%C3%A7%C3%A3o%20M-ES", "fa-solid fa-envelope", "Enviar e-mail", "secondary") }}
+  {% endcall %}
+</section>

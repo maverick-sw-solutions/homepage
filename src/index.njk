@@ -1,0 +1,49 @@
+---
+layout: base.njk
+title: Maverick Software Solutions
+description: Software sob medida para problemas reais.
+home: true
+pageLabel: Home
+---
+{% from "macros/components.njk" import projectCard, btn, contactCard %}
+
+<section id="hero" class="hero">
+  <div class="hero__blob hero__blob--tr"></div>
+  <div class="hero__blob hero__blob--bl"></div>
+  <div class="hero__inner hero__inner--narrow">
+    <div class="hero__eyebrow">Maverick Software Solutions</div>
+    <h1 class="hero__title hero__title--display">Software sob medida para problemas reais.</h1>
+    <a href="#projetos" class="btn btn--primary btn--large">VER PROJETOS <i class="fa-solid fa-arrow-down"></i></a>
+  </div>
+</section>
+
+<section id="sobre" class="section about">
+  <div class="about__photo">
+    <i class="fa-solid fa-user"></i>
+    <span>foto do Heitor (headshot)</span>
+  </div>
+  <div>
+    <div class="section-label">Sobre</div>
+    <p class="about__text">Heitor Maciel de Vasconcellos Leite é Bacharel em Ciência da Computação e desenvolvedor sênior com 6 anos de atuação no ecossistema Microsoft (.NET, C#, Azure). Em 2026, fundou a MSS (Maverick Software Solutions) para consolidar projetos próprios de software sob uma marca única.</p>
+  </div>
+</section>
+
+<section id="projetos" class="section section--bordered">
+  <div class="section--wide">
+    <div class="section-label section-label--center">Projetos</div>
+    <h2 class="section-heading">O que construímos</h2>
+
+    <div class="projects-grid">
+      {{ projectCard("/paraki/", "carrossel — screenshots do mapa", "Paraki", "No ar", "success", "Mapeamento colaborativo de infraestrutura de bicicletários") }}
+      {{ projectCard("/tupijua/", "carrossel — telas do app", "TupiJuá", "Em validação", "warning", "App de treino e acompanhamento fitness, pronto para parcerias white-label") }}
+      {{ projectCard("/m-es/", "carrossel — painel e app", "Maverick Event Solutions (M-ES)", "MVP", "highlight", "Carteira virtual para eventos — carga, PDV e gestão financeira sem fila") }}
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="contact-section">
+  {% call contactCard(heading="Heitor Maciel de Vasconcellos Leite", eyebrow="Contato", subtitle="Fundador") %}
+    {{ btn("mailto:contato@mavericksoftware.com.br", "fa-solid fa-envelope", "E-mail", "primary") }}
+    {{ btn("https://wa.me/5511940035698", "fa-brands fa-whatsapp", "WhatsApp", "secondary") }}
+  {% endcall %}
+</section>
