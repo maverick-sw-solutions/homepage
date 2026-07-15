@@ -1,0 +1,16 @@
+---
+layout: base.njk
+title: Página não encontrada — Maverick Software Solutions
+home: false
+pageLabel: 404
+permalink: /404.html
+---
+{% from "macros/components.njk" import btn %}
+
+<section class="section section--narrow section--center">
+  <div class="hero__eyebrow">404</div>
+  <h1 class="hero__title hero__title--tight">Essa página não existe ou foi movida.</h1>
+  <div class="contact-card__actions">
+    {{ btn("/", "fa-solid fa-arrow-left", "Voltar para a home", "primary") }}
+  </div>
+</section>
