@@ -14,6 +14,16 @@
   <header class="site-header">
     {% include "partials/header.njk" %}
   </header>
+  <script>
+    (function () {
+      var header = document.currentScript.previousElementSibling;
+      function setHeaderHeight() {
+        document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
+      }
+      setHeaderHeight();
+      window.addEventListener("resize", setHeaderHeight);
+    })();
+  </script>
 
   {{ content | safe }}
 

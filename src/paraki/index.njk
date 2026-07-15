@@ -7,14 +7,31 @@ pageLabel: Paraki
 ---
 {% from "macros/components.njk" import audienceCard, step, btn, contactCard %}
 
-<section id="hero" class="hero">
+<section id="hero" class="hero hero--top">
   <div class="hero__blob hero__blob--tl"></div>
   <div class="hero__inner">
     <div class="hero__eyebrow">Paraki</div>
-    <h1 class="hero__title hero__title--tight">Mapeamento colaborativo de bicicletários e paraciclos — infraestrutura de apoio para quem pedala, em um só lugar.</h1>
-    <div class="hero__media hero__media--md">
-      <i class="fa-solid fa-map-location-dot"></i>
-      <span>screenshot do mapa em uso</span>
+    <h1 class="hero__title hero__title--tight">Mapeamento colaborativo de bicicletários e paraciclos — infraestrutura de apoio para patinetes, scooters ou bikes, em um só lugar.</h1>
+  </div>
+</section>
+
+<section id="capturas" class="hero hero--carousel">
+  <div class="hero__inner">
+    <div class="screens-carousel" data-screens-carousel>
+      <button type="button" class="screens-carousel__arrow screens-carousel__arrow--prev" data-screens-prev aria-label="Slide anterior"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="screens-carousel__viewport">
+        <div class="screens-carousel__track" data-screens-track>
+          <div class="screens-carousel__slide"><img src="/assets/img/paraki/mobile/mapa.jpg" alt="Mapa de bicicletários no app Paraki" width="396" height="881" loading="lazy"></div>
+          <div class="screens-carousel__slide"><img src="/assets/img/paraki/mobile/lista.jpg" alt="Lista de bicicletários no app Paraki" width="396" height="881" loading="lazy"></div>
+          <div class="screens-carousel__slide"><img src="/assets/img/paraki/mobile/detalhe1.jpg" alt="Detalhe de um bicicletário no app Paraki" width="396" height="881" loading="lazy"></div>
+          <div class="screens-carousel__slide"><img src="/assets/img/paraki/mobile/detalhe2.jpg" alt="Detalhe de um bicicletário no app Paraki" width="396" height="881" loading="lazy"></div>
+          <div class="screens-carousel__slide"><img src="/assets/img/paraki/mobile/adicionar1.jpg" alt="Cadastro de bicicletário — escolha do local" width="396" height="881" loading="lazy"></div>
+          <div class="screens-carousel__slide"><img src="/assets/img/paraki/mobile/adicionar2.jpg" alt="Cadastro de bicicletário — dados básicos" width="396" height="881" loading="lazy"></div>
+          <div class="screens-carousel__slide"><img src="/assets/img/paraki/mobile/adicionar3.jpg" alt="Cadastro de bicicletário — serviços e veículos" width="396" height="881" loading="lazy"></div>
+          <div class="screens-carousel__slide"><img src="/assets/img/paraki/mobile/perfil.jpg" alt="Perfil do usuário no app Paraki" width="396" height="881" loading="lazy"></div>
+        </div>
+      </div>
+      <button type="button" class="screens-carousel__arrow screens-carousel__arrow--next" data-screens-next aria-label="Próximo slide"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
   </div>
 </section>
@@ -33,7 +50,7 @@ pageLabel: Paraki
   <div class="section--medium">
     <div class="section-label section-label--center">Para quem é</div>
     <div class="audience-grid">
-      {{ audienceCard("fa-solid fa-bicycle", "Ciclistas/usuários", "Encontram bicicletários e paraciclos perto de onde estão") }}
+      {{ audienceCard("fa-solid fa-bicycle", "Usuários", "Encontram bicicletários e paraciclos perto de onde estão") }}
       {{ audienceCard("fa-solid fa-store", "Estabelecimentos", "Visibilidade gratuita do próprio bicicletário para quem já pedala e busca onde estacionar") }}
       {{ audienceCard("fa-solid fa-landmark", "Poder público/pesquisa", "Dado aberto sobre infraestrutura real de bicicletários na cidade") }}
     </div>
@@ -44,7 +61,7 @@ pageLabel: Paraki
   <div class="section-label">Status atual</div>
   <div class="status-list">
     <p><i class="fa-solid fa-tower-broadcast text-success"></i>No ar em <a href="https://paraki.mavericksoftware.com.br/">paraki.mavericksoftware.com.br</a></p>
-    <p>App em teste na Play Store (screenshots a caminho); iOS em breve</p>
+    <p>App em teste na Play Store; iOS em breve</p>
     <p>Sem números/métricas publicados por enquanto</p>
   </div>
 </section>
