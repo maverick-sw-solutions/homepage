@@ -5,5 +5,11 @@
     "directory": "./_site",
     "html_handling": "force-trailing-slash",
     "not_found_handling": "404-page"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "mavericksoftware.com.br",
+      "custom_domain": true
+    }
+  ]
 }
