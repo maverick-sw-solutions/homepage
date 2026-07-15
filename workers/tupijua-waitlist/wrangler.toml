@@ -1,0 +1,7 @@
+name = "mss-tupijua-waitlist"
+main = "src/index.js"
+compatibility_date = "2026-07-14"
+
+[[kv_namespaces]]
+binding = "WAITLIST"
+id = "8fdabef3df69404a9063dbaf395e1864"

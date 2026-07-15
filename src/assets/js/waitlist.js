@@ -1,4 +1,8 @@
 (function () {
+  // TODO: trocar para uma rota no mesmo domínio (ex.: /api/waitlist) quando o
+  // site tiver domínio de produção definido e o Worker puder ser mapeado nele.
+  var WAITLIST_ENDPOINT = "https://mss-tupijua-waitlist.heitormvl12.workers.dev/";
+
   var form = document.getElementById("waitlist-form");
   if (!form) return;
 
@@ -28,7 +32,7 @@
     submitBtn.disabled = true;
     setStatus("Enviando…");
 
-    fetch("/api/waitlist", {
+    fetch(WAITLIST_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: email }),
