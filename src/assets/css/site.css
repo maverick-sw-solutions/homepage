@@ -325,6 +325,10 @@
 .carousel-arrow--prev { left: 12px; }
 .carousel-arrow--next { right: 12px; }
 
+@media (hover: none) {
+  .carousel-arrow { opacity: 1; pointer-events: auto; }
+}
+
 .project-card__body {
   padding: 24px;
   display: flex;
