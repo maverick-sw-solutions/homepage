@@ -19,8 +19,7 @@ pageLabel: Home
 
 <section id="sobre" class="section about">
   <div class="about__photo">
-    <i class="fa-solid fa-user"></i>
-    <span>foto do Heitor (headshot)</span>
+    <img src="/assets/img/heitor.jpg" alt="Heitor Maciel de Vasconcellos Leite">
   </div>
   <div>
     <div class="section-label">Sobre</div>
@@ -34,7 +33,14 @@ pageLabel: Home
     <h2 class="section-heading">O que construímos</h2>
 
     <div class="projects-grid">
-      {{ projectCard("/paraki/", "carrossel — screenshots do mapa", "Paraki", "No ar", "success", "Mapeamento colaborativo de infraestrutura de bicicletários") }}
+      {{ projectCard("/paraki/", "carrossel — screenshots do mapa", "Paraki", "No ar", "success", "Mapeamento colaborativo de infraestrutura de bicicletários", [
+        "/assets/img/paraki/mapa.jpg",
+        "/assets/img/paraki/lista.jpg",
+        "/assets/img/paraki/detalhe1.jpg",
+        "/assets/img/paraki/detalhe2.jpg",
+        "/assets/img/paraki/adicionar.jpg",
+        "/assets/img/paraki/perfil.jpg"
+      ]) }}
       {{ projectCard("/tupijua/", "carrossel — telas do app", "TupiJuá", "Em validação", "warning", "App de treino e acompanhamento fitness, pronto para parcerias white-label") }}
       {{ projectCard("/m-es/", "carrossel — painel e app", "Maverick Event Solutions (M-ES)", "MVP", "highlight", "Carteira virtual para eventos — carga, PDV e gestão financeira sem fila") }}
     </div>

@@ -2,12 +2,22 @@
 <a href="{{ href }}" class="btn btn--{{ variant }}"><i class="{{ icon }}"></i> {{ label }}</a>
 {% endmacro %}
 
-{% macro projectCard(href, mediaLabel, title, badgeText, badgeVariant, desc) %}
+{% macro projectCard(href, mediaLabel, title, badgeText, badgeVariant, desc, images=[]) %}
 <a href="{{ href }}" class="project-card">
+  {% if images.length %}
+  <div class="project-card__media project-card__media--carousel" data-carousel>
+    {% for img in images %}
+    <img class="carousel-slide{% if loop.first %} is-active{% endif %}" src="{{ img }}" alt="" loading="lazy">
+    {% endfor %}
+    <button type="button" class="carousel-arrow carousel-arrow--prev" data-carousel-prev aria-label="Slide anterior"><i class="fa-solid fa-chevron-left"></i></button>
+    <button type="button" class="carousel-arrow carousel-arrow--next" data-carousel-next aria-label="Próximo slide"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+  {% else %}
   <div class="project-card__media">
     <i class="fa-regular fa-images"></i>
     <span>{{ mediaLabel }}</span>
   </div>
+  {% endif %}
   <div class="project-card__body">
     <div class="project-card__head">
       <h3 class="project-card__title">{{ title }}</h3>
