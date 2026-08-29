@@ -1,0 +1,62 @@
+---
+layout: base.njk
+title: Marcaki — Maverick Software Solutions
+description: Agendamento online para salões, barbearias e clínicas de estética, com lembrete automático por WhatsApp.
+home: false
+pageLabel: Marcaki
+---
+{% from "macros/components.njk" import featureCard, audienceCard, step, btn, contactCard %}
+
+<section id="hero" class="hero hero--top">
+  <div class="hero-aura" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__eyebrow" data-anim="rise">Marcaki</div>
+    <h1 class="hero__title hero__title--tight" data-anim="rise" data-delay="0.1">Agendamento online para salões, barbearias e clínicas de estética — cliente marca sozinho, sem trocar mensagem no WhatsApp o dia inteiro.</h1>
+  </div>
+</section>
+
+<section id="funcionalidades" class="section section--medium">
+  <div class="section-label section-label--center" data-anim="rise">Funcionalidades</div>
+  <div class="feature-grid" data-stagger="0.1">
+    {{ featureCard("fa-brands fa-whatsapp", "Confirmação e lembrete por WhatsApp", "O cliente recebe confirmação ao agendar e um lembrete antes do horário, automaticamente — 100 envios grátis por mês inclusos no plano.") }}
+    {{ featureCard("fa-solid fa-calendar-check", "Grade de horários real", "Calculada a partir do expediente do negócio menos o que já está marcado. Sem duplicar horário, sem conflito.") }}
+    {{ featureCard("fa-solid fa-robot", "Suporte com triagem por IA", "Dúvidas de uso recebem resposta na hora; o que precisa de uma pessoa vai direto para a fila humana.") }}
+  </div>
+</section>
+
+<section id="como-funciona" class="section section--narrow section--bordered">
+  <div class="section-label" data-anim="rise">Como funciona</div>
+  <div class="steps">
+    {{ step(1, "O negócio se cadastra e ganha uma página própria de agendamento") }}
+    {{ step(2, "Cadastra serviços (duração e preço) e o horário de funcionamento, que define a grade") }}
+    {{ step(3, "Compartilha o link — na bio do Instagram, no status do WhatsApp, no cartão") }}
+    {{ step(4, "O cliente escolhe serviço, profissional e horário sozinho, sem precisar criar conta") }}
+  </div>
+</section>
+
+<section id="para-quem-e" class="section">
+  <div class="section--medium">
+    <div class="section-label section-label--center" data-anim="rise">Para quem é</div>
+    <div class="audience-grid" data-stagger="0.1">
+      {{ audienceCard("fa-solid fa-scissors", "Salões, barbearias e clínicas", "Agenda organizada sem parar o atendimento pra responder mensagem o dia todo") }}
+      {{ audienceCard("fa-solid fa-user-check", "Clientes finais", "Agendam a qualquer hora pela página do negócio, sem baixar app nem criar conta") }}
+      {{ audienceCard("fa-solid fa-users", "Equipes com vários profissionais", "Cada profissional tem a própria agenda, com horário independente do horário da loja") }}
+    </div>
+  </div>
+</section>
+
+<section id="status" class="section status-block">
+  <div class="section-label" data-anim="rise">Status atual</div>
+  <div class="status-list">
+    <p><i class="fa-solid fa-tower-broadcast text-success"></i>No ar em <a href="https://marcaki.app">marcaki.app</a>, com cadastro self-service</p>
+    <p>Plano único, com teste grátis de 14 dias — mensal ou anual</p>
+    <p>Em conformidade com a LGPD</p>
+  </div>
+</section>
+
+<section id="contato" class="contact-section">
+  {% call contactCard(heading="Quer saber mais sobre o Marcaki? Fale com a gente.") %}
+    {{ btn("https://marcaki.app", "fa-solid fa-arrow-up-right-from-square", "Ver o Marcaki", "primary") }}
+    {{ btn("mailto:contato@mavericksoftware.com.br?subject=Marcaki", "fa-solid fa-envelope", "Enviar e-mail", "secondary") }}
+  {% endcall %}
+</section>
