@@ -3,13 +3,19 @@
     <span class="site-header__brand-full">Maverick Software Solutions</span>
     <span class="site-header__brand-short">MSS</span>
   </a>
+  <nav class="site-nav" aria-label="Navegação principal">
+    <a href="#sobre">Sobre</a>
+    <a href="#capacidades">Capacidades</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#experiencia">Experiência</a>
+    <a href="#contato">Contato</a>
+  </nav>
   <div class="site-header__group">
-    <nav class="site-nav">
-      <a href="#sobre">Sobre</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-    </nav>
+    <a class="btn btn--primary btn--sm site-header__cta" href="https://wa.me/5511940035698" target="_blank" rel="noopener" data-magnetic>
+      WhatsApp <span class="arrow" aria-hidden="true"></span>
+    </a>
     {% include "partials/theme-toggle.njk" %}
+    <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle><i></i><i></i></button>
   </div>
 {% else %}
   <a href="/" class="site-header__brand"><i class="fa-solid fa-arrow-left"></i>

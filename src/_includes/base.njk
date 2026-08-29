@@ -5,18 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ title }}</title>
 {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+<meta name="theme-color" content="#7D1128">
+<link rel="canonical" href="https://mavericksoftware.com.br{{ page.url }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="{{ title }}">
+{% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
+<meta property="og:url" content="https://mavericksoftware.com.br{{ page.url }}">
+<meta property="og:image" content="https://mavericksoftware.com.br/assets/img/heitor.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/site.css">
+<script>document.documentElement.classList.add('motion-ready');</script>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
 <div class="page" data-screen-label="{{ pageLabel or 'Home' }}">
   <header class="site-header">
     {% include "partials/header.njk" %}
   </header>
+
+  {% if home %}
+  <nav class="mmenu" aria-label="Menu">
+    <a href="#sobre">Sobre</a>
+    <a href="#capacidades">Capacidades</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#experiencia">Experiência</a>
+    <a href="#contato">Contato</a>
+    <a href="https://wa.me/5511940035698" target="_blank" rel="noopener">WhatsApp</a>
+  </nav>
+  {% endif %}
+
   <script>
     (function () {
-      var header = document.currentScript.previousElementSibling;
+      var header = document.querySelector(".site-header");
       function setHeaderHeight() {
         document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
       }
@@ -31,5 +55,8 @@
 </div>
 <script src="/assets/js/theme.js"></script>
 <script src="/assets/js/carousel.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="/assets/js/motion.js"></script>
 </body>
 </html>

@@ -1,31 +1,20 @@
 {% macro btn(href, icon, label, variant="primary") %}
-<a href="{{ href }}" class="btn btn--{{ variant }}"><i class="{{ icon }}"></i> {{ label }}</a>
+<a href="{{ href }}" class="btn btn--{{ variant }}"><i class="{{ icon }}"></i> {{ label }}<span class="arrow" aria-hidden="true"></span></a>
 {% endmacro %}
 
-{% macro projectCard(href, mediaLabel, title, badgeText, badgeVariant, desc, images=[]) %}
-<a href="{{ href }}" class="project-card">
-  {% if images.length %}
-  <div class="project-card__media project-card__media--carousel" data-carousel>
-    {% for img in images %}
-    <img class="carousel-slide{% if loop.first %} is-active{% endif %}" src="{{ img }}" alt="" loading="lazy">
-    {% endfor %}
-    <button type="button" class="carousel-arrow carousel-arrow--prev" data-carousel-prev aria-label="Slide anterior"><i class="fa-solid fa-chevron-left"></i></button>
-    <button type="button" class="carousel-arrow carousel-arrow--next" data-carousel-next aria-label="Próximo slide"><i class="fa-solid fa-chevron-right"></i></button>
-  </div>
-  {% else %}
-  <div class="project-card__media">
-    <i class="fa-regular fa-images"></i>
-    <span>{{ mediaLabel }}</span>
-  </div>
-  {% endif %}
-  <div class="project-card__body">
-    <div class="project-card__head">
-      <h3 class="project-card__title">{{ title }}</h3>
-      <span class="badge badge--{{ badgeVariant }}">{{ badgeText }}</span>
-    </div>
-    <p class="project-card__desc">{{ desc }}</p>
-    <span class="project-card__cta">Saiba mais →</span>
-  </div>
+{% macro projectRow(href, idx, title, badgeText, badgeVariant, desc, image=none) %}
+<a href="{{ href }}" class="prj" data-anim="rise">
+  <span class="prj-inner">
+    <span class="prj-idx">{{ idx }}</span>
+    <span class="prj-name">{{ title }}</span>
+    <span class="prj-thumb">
+      {% if image %}<img src="{{ image }}" alt="" loading="lazy">{% else %}<span class="plate"><b>{{ title }}</b></span>{% endif %}
+    </span>
+    <span class="prj-side">
+      <span class="prj-status prj-status--{{ badgeVariant }}">{{ badgeText }}</span>
+      <span class="prj-desc">{{ desc }}</span>
+    </span>
+  </span>
 </a>
 {% endmacro %}
 
@@ -65,4 +54,23 @@
     {{ caller() }}
   </div>
 </div>
+{% endmacro %}
+
+{% macro dataRow(label, value) %}
+<div class="data-row"><dt>{{ label }}</dt><dd>{{ value }}</dd></div>
+{% endmacro %}
+
+{% macro techToken(text, idx="", size="") %}
+<span class="tok{% if size %} tok--{{ size }}{% endif %}">{{ text }}{% if idx %}<sup>{{ idx }}</sup>{% endif %}</span>
+{% endmacro %}
+
+{% macro timelineItem(when, role, org, desc) %}
+<article class="tl-item">
+  <p class="tl-when">{{ when }}</p>
+  <div>
+    <h3 class="tl-role">{{ role }}</h3>
+    <p class="tl-org">{{ org }}</p>
+    <p class="tl-desc">{{ desc | safe }}</p>
+  </div>
+</article>
 {% endmacro %}

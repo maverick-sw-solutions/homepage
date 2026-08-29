@@ -5,44 +5,128 @@ description: Software sob medida para problemas reais.
 home: true
 pageLabel: Home
 ---
-{% from "macros/components.njk" import projectCard, btn, contactCard %}
+{% from "macros/components.njk" import projectRow, btn, contactCard, dataRow, techToken, timelineItem %}
 
 <section id="hero" class="hero">
-  <div class="hero__blob hero__blob--tr"></div>
-  <div class="hero__blob hero__blob--bl"></div>
+  <div class="hero-aura" aria-hidden="true"></div>
   <div class="hero__inner hero__inner--narrow">
-    <div class="hero__eyebrow">Maverick Software Solutions</div>
-    <h1 class="hero__title hero__title--display">Software sob medida para problemas reais.</h1>
-    <a href="#projetos" class="btn btn--primary btn--large">VER PROJETOS <i class="fa-solid fa-arrow-down"></i></a>
+    <div class="hero__eyebrow">Maverick Software Solutions — MSS</div>
+    <h1 class="hero__title hero__title--display" data-mask>
+      <span class="mask"><span class="mask-i">Software</span></span>
+      <span class="mask"><span class="mask-i">sob medida</span></span>
+      <span class="mask"><span class="mask-i">para problemas</span></span>
+      <span class="mask"><span class="mask-i"><em class="lit" style="font-style:normal">reais.</em></span></span>
+    </h1>
+    <a href="#projetos" class="btn btn--primary btn--large" data-magnetic>VER PROJETOS <span class="arrow" aria-hidden="true"></span></a>
   </div>
 </section>
 
-<section id="sobre" class="section about">
-  <div class="about__photo">
-    <img src="/assets/img/heitor.jpg" alt="Heitor Maciel de Vasconcellos Leite">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" data-dir="ltr" data-speed="30">
+    <span class="marquee-item">C#</span><span class="marquee-item">.NET</span><span class="marquee-item">Azure</span><span class="marquee-item">Arquitetura</span><span class="marquee-item">SQL Server</span><span class="marquee-item">Microsserviços</span><span class="marquee-item">Cloud</span><span class="marquee-item">API</span>
+    <span class="marquee-item">C#</span><span class="marquee-item">.NET</span><span class="marquee-item">Azure</span><span class="marquee-item">Arquitetura</span><span class="marquee-item">SQL Server</span><span class="marquee-item">Microsserviços</span><span class="marquee-item">Cloud</span><span class="marquee-item">API</span>
   </div>
-  <div>
-    <div class="section-label">Sobre</div>
-    <p class="about__text">Heitor Maciel de Vasconcellos Leite é Bacharel em Ciência da Computação e desenvolvedor sênior com 6 anos de atuação no ecossistema Microsoft (.NET, C#, Azure). Em 2026, fundou a MSS (Maverick Software Solutions) para consolidar projetos próprios de software sob uma marca única.</p>
+</div>
+<div class="marquee marquee--ghost" aria-hidden="true">
+  <div class="marquee-track" data-dir="rtl" data-speed="38">
+    <span class="marquee-item">Maverick</span><span class="marquee-item">Software</span><span class="marquee-item">Solutions</span><span class="marquee-item">MSS</span><span class="marquee-item">Maverick</span><span class="marquee-item">Software</span><span class="marquee-item">Solutions</span><span class="marquee-item">MSS</span>
+    <span class="marquee-item">Maverick</span><span class="marquee-item">Software</span><span class="marquee-item">Solutions</span><span class="marquee-item">MSS</span><span class="marquee-item">Maverick</span><span class="marquee-item">Software</span><span class="marquee-item">Solutions</span><span class="marquee-item">MSS</span>
   </div>
-</section>
+</div>
 
-<section id="projetos" class="section section--bordered">
+<section id="sobre" class="section">
   <div class="section--wide">
-    <div class="section-label section-label--center">Projetos</div>
-    <h2 class="section-heading">O que construímos</h2>
+    <div class="section-label" data-anim="rise">Sobre</div>
+    <div class="about" style="margin-top:34px">
+      <div class="about__photo">
+        <img src="/assets/img/heitor.jpg" alt="Heitor Maciel de Vasconcellos Leite">
+      </div>
+      <div>
+        <p class="about__text" data-anim="rise">Heitor Maciel de Vasconcellos Leite é Bacharel em Ciência da Computação e desenvolvedor sênior com 6 anos de atuação no ecossistema Microsoft (.NET, C#, Azure). Em 2026, fundou a MSS (Maverick Software Solutions) para consolidar projetos próprios de software sob uma marca única.</p>
+        <dl class="data-strip" data-stagger="0.08">
+          {{ dataRow("Fundada em", "2026") }}
+          {{ dataRow("Responsável", "Heitor M. V. Leite") }}
+          {{ dataRow("Formação", "Bacharel em Ciência da Computação") }}
+          {{ dataRow("CNPJ", "65.483.350/0001-00") }}
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="projects-grid">
-      {{ projectCard("/paraki/", "carrossel — screenshots do mapa", "Paraki", "No ar", "success", "Mapeamento colaborativo de infraestrutura de bicicletários", [
-        "/assets/img/paraki/mapa.jpg",
-        "/assets/img/paraki/lista.jpg",
-        "/assets/img/paraki/detalhe1.jpg",
-        "/assets/img/paraki/detalhe2.jpg",
-        "/assets/img/paraki/adicionar.jpg",
-        "/assets/img/paraki/perfil.jpg"
-      ]) }}
-      {{ projectCard("/tupijua/", "carrossel — telas do app", "TupiJuá", "Em validação", "warning", "App de treino e acompanhamento fitness, pronto para parcerias white-label") }}
-      {{ projectCard("/m-es/", "carrossel — painel e app", "Maverick Event Solutions (M-ES)", "MVP", "highlight", "Carteira virtual para eventos — carga, PDV e gestão financeira sem fila") }}
+<section id="capacidades" class="section section--bordered">
+  <div class="section--wide">
+    <div class="section-label section-label--center" data-anim="rise">Capacidades</div>
+    <h2 class="section-heading">Capacidade técnica</h2>
+    <p class="section-note">Stack de produção para os nossos principais produtos.</p>
+
+    <div class="wall">
+      {{ techToken("C#", "01", "xl") }}
+      {{ techToken(".NET 8/9", "02", "lg") }}
+      {{ techToken("ASP.NET Core", "03") }}
+      {{ techToken("Web API", "04", "sm") }}
+      {{ techToken("Entity Framework Core", "05") }}
+      {{ techToken("Clean Architecture", "06", "lg") }}
+      {{ techToken("CQRS", "07", "sm") }}
+      {{ techToken("DDD", "08", "sm") }}
+      {{ techToken("Microsserviços", "09", "lg") }}
+      {{ techToken("Azure", "10", "xl") }}
+      {{ techToken("App Services", "11") }}
+      {{ techToken("Azure Functions", "12") }}
+      {{ techToken("Blob Storage", "13", "sm") }}
+      {{ techToken("Docker", "14", "lg") }}
+      {{ techToken("CI/CD", "15") }}
+      {{ techToken("GitHub Actions", "16", "sm") }}
+      {{ techToken("SQL Server", "17", "xl") }}
+      {{ techToken("PostgreSQL", "18") }}
+      {{ techToken("PostGIS", "19", "sm") }}
+      {{ techToken("Redis", "20") }}
+      {{ techToken("SignalR", "21", "sm") }}
+      {{ techToken("REST", "22", "sm") }}
+      {{ techToken("Git", "23", "sm") }}
+      {{ techToken("JavaScript ES6+", "24") }}
+      {{ techToken("HTML5", "25", "sm") }}
+      {{ techToken("CSS3", "26", "sm") }}
+      {{ techToken("React Native", "27", "lg") }}
+      {{ techToken("Multi-tenant", "28") }}
+      {{ techToken("White-label", "29", "sm") }}
+      {{ techToken("QR Code", "30", "sm") }}
+      {{ techToken("Offline sync", "31", "sm") }}
+      {{ techToken("Google Maps API", "32", "sm") }}
+      {{ techToken("Clean Code", "33") }}
+    </div>
+
+    <div class="wall-foot" data-stagger="0.1">
+      <p class="tag tag--brand">33 tecnologias em uso</p>
+      <p class="tag tag--plain">Backend · Cloud · Dados · Mobile</p>
+    </div>
+  </div>
+</section>
+
+<section id="projetos" class="section">
+  <div class="section--wide">
+    <div class="section-label section-label--center" data-anim="rise">Projetos</div>
+    <h2 class="section-heading">O que construímos</h2>
+    <p class="section-note">Produtos próprios da MSS. Abra qualquer linha para ver a ficha completa.</p>
+
+    <div class="projects-list">
+      {{ projectRow("/paraki/", "01", "Paraki", "No ar", "success", "Mapeamento colaborativo de infraestrutura de bicicletários", "/assets/img/paraki/mapa.jpg") }}
+      {{ projectRow("/tupijua/", "02", "TupiJuá", "Em validação", "warning", "App de treino e acompanhamento fitness, pronto para parcerias white-label") }}
+      {{ projectRow("/m-es/", "03", "Maverick Event Solutions", "MVP", "highlight", "Carteira virtual para eventos — carga, PDV e gestão financeira sem fila") }}
+    </div>
+  </div>
+</section>
+
+<section id="experiencia" class="section section--bordered">
+  <div class="section--wide">
+    <div class="section-label section-label--center" data-anim="rise">Experiência</div>
+    <h2 class="section-heading" style="margin-bottom:56px">Experiência e formação</h2>
+
+    <div class="track">
+      <span class="track-line" aria-hidden="true"><i></i></span>
+      {{ timelineItem("2026 — Hoje", "Fundador & responsável técnico", "MSS — Maverick Software Solutions", "Fundação da MSS para consolidar e gerenciar projetos próprios de software sob uma marca corporativa única. Responsável por arquitetura, desenvolvimento e operação dos produtos Paraki, TupiJuá e Maverick Event Solutions.") }}
+      {{ timelineItem("2020 — 2026", "Desenvolvedor sênior .NET / C#", "Ecossistema Microsoft", "Seis anos de atuação sênior no ecossistema Microsoft — desenvolvimento em .NET e C#, modelagem e otimização de banco de dados e soluções em nuvem Azure.") }}
+      {{ timelineItem("Formação", "Bacharel em Ciência da Computação", "Ensino superior completo", "Base teórica que sustenta as decisões de arquitetura: algoritmos, estruturas de dados, engenharia de software e sistemas distribuídos.") }}
     </div>
   </div>
 </section>
