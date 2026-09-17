@@ -124,6 +124,7 @@
     var slides = Array.prototype.slice.call(track.children);
     var prevBtn = root.querySelector("[data-screens-prev]");
     var nextBtn = root.querySelector("[data-screens-next]");
+    var dotsContainer = root.querySelector("[data-screens-dots]");
     if (!slides.length) return;
 
     var lb = ensureLightbox();
@@ -137,6 +138,22 @@
     });
 
     var index = 0;
+    var dots = [];
+
+    if (dotsContainer) {
+      dots = slides.map(function (_, i) {
+        var dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "screens-carousel__dot";
+        dot.setAttribute("aria-label", "Ir para a captura " + (i + 1));
+        dot.addEventListener("click", function () {
+          index = i;
+          update();
+        });
+        dotsContainer.appendChild(dot);
+        return dot;
+      });
+    }
 
     function step() {
       var gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
@@ -153,6 +170,9 @@
       track.style.transform = "translateX(" + (-index * step()) + "px)";
       prevBtn.disabled = index <= 0;
       nextBtn.disabled = index >= maxIndex;
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle("is-active", i === index);
+      });
     }
 
     prevBtn.addEventListener("click", function (e) {

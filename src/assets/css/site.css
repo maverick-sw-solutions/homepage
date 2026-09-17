@@ -711,8 +711,16 @@ body.is-locked { overflow: hidden; }
 /* ---- Screens carousel (product screenshots — one featured slide, side arrows) ---- */
 .screens-carousel {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.screens-carousel__row {
+  display: flex;
   align-items: center;
   gap: 24px;
+  width: 100%;
 }
 
 .screens-carousel__viewport {
@@ -736,6 +744,9 @@ body.is-locked { overflow: hidden; }
   overflow: hidden;
   background: var(--bg-3);
   box-shadow: inset 0 0 32px 10px var(--accent-tint);
+  /* Forces its own compositing layer so the rounded clip doesn't
+     flash square while the track's transform is animating (Chromium). */
+  transform: translateZ(0);
 }
 
 .screens-carousel__slide img {
@@ -766,12 +777,33 @@ body.is-locked { overflow: hidden; }
 .screens-carousel__arrow:hover { background: var(--bg-3); }
 .screens-carousel__arrow:disabled { opacity: 0.3; cursor: default; pointer-events: none; }
 
+.screens-carousel__dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.screens-carousel__dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: var(--r-pill);
+  background: var(--line-strong);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.screens-carousel__dot:hover { background: var(--fg-3); }
+.screens-carousel__dot.is-active { background: var(--accent); transform: scale(1.3); }
+
 @media (prefers-reduced-motion: reduce) {
   .screens-carousel__track { transition: none; }
 }
 
 @media (max-width: 640px) {
-  .screens-carousel {
+  .screens-carousel__row {
     position: relative;
     gap: 0;
     padding: 15px;
