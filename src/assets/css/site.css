@@ -709,7 +709,7 @@ body.is-locked { overflow: hidden; }
 .prj-status--warning { color: var(--mss-warning); }
 .prj-status--highlight { color: var(--accent); }
 
-/* ---- Screens carousel (Paraki mobile screenshots) ---- */
+/* ---- Screens carousel (product screenshots — Paraki mobile, Marcaki desktop) ---- */
 .screens-carousel {
   display: flex;
   align-items: center;
