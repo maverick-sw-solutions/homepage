@@ -1,7 +1,8 @@
 {% if home %}
-  <a href="#hero" class="site-header__brand site-header__brand--home">
-    <span class="site-header__brand-full">Maverick Software Solutions</span>
-    <span class="site-header__brand-short">MSS</span>
+  <a href="#hero" class="site-header__brand site-header__brand--home" aria-label="Maverick Software Solutions — início">
+    <img class="site-header__logo site-header__logo--lockup site-header__logo--light" src="/assets/img/logo/mss-logo-light.png" width="900" height="136" alt="Maverick Software Solutions">
+    <img class="site-header__logo site-header__logo--lockup site-header__logo--dark" src="/assets/img/logo/mss-logo-dark.png" width="900" height="136" alt="Maverick Software Solutions">
+    <img class="site-header__logo site-header__logo--mark" src="/assets/img/logo/mss-mark.png" width="400" height="353" alt="Maverick Software Solutions">
   </a>
   <nav class="site-nav" aria-label="Navegação principal">
     <a href="#sobre">Sobre</a>
@@ -18,9 +19,10 @@
     <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle><i></i><i></i></button>
   </div>
 {% else %}
-  <a href="/" class="site-header__brand"><i class="fa-solid fa-arrow-left"></i>
-    <span class="site-header__brand-full">Maverick Software Solutions</span>
-    <span class="site-header__brand-short">MSS</span>
+  <a href="/" class="site-header__brand" aria-label="Maverick Software Solutions — início"><i class="fa-solid fa-arrow-left"></i>
+    <img class="site-header__logo site-header__logo--lockup site-header__logo--light" src="/assets/img/logo/mss-logo-light.png" width="900" height="136" alt="Maverick Software Solutions">
+    <img class="site-header__logo site-header__logo--lockup site-header__logo--dark" src="/assets/img/logo/mss-logo-dark.png" width="900" height="136" alt="Maverick Software Solutions">
+    <img class="site-header__logo site-header__logo--mark" src="/assets/img/logo/mss-mark.png" width="400" height="353" alt="Maverick Software Solutions">
   </a>
   <span class="badge-page" data-header-badge>{{ pageLabel }}</span>
   <div class="site-header__right">
