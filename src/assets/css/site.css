@@ -272,7 +272,6 @@ body.is-locked { overflow: hidden; }
 }
 
 .hero--top { padding-bottom: 48px; }
-.hero--carousel { padding-top: 0; padding-bottom: 0; }
 
 .hero-aura {
   position: absolute;
@@ -709,11 +708,11 @@ body.is-locked { overflow: hidden; }
 .prj-status--warning { color: var(--mss-warning); }
 .prj-status--highlight { color: var(--accent); }
 
-/* ---- Screens carousel (product screenshots — Paraki mobile, Marcaki desktop) ---- */
+/* ---- Screens carousel (product screenshots — one featured slide, side arrows) ---- */
 .screens-carousel {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
 }
 
 .screens-carousel__viewport {
@@ -723,13 +722,16 @@ body.is-locked { overflow: hidden; }
 
 .screens-carousel__track {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
   transition: transform 0.4s var(--ease);
 }
 
 .screens-carousel__slide {
-  flex: 0 0 calc((100% - 40px) / 3);
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: var(--r-lg);
   overflow: hidden;
   background: var(--bg-3);
@@ -737,16 +739,19 @@ body.is-locked { overflow: hidden; }
 }
 
 .screens-carousel__slide img {
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
+  max-height: min(70vh, 680px);
   display: block;
   cursor: zoom-in;
 }
 
 .screens-carousel__arrow {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 52px;
+  height: 52px;
+  font-size: 18px;
   border: 1px solid var(--line-strong);
   border-radius: var(--r-pill);
   background: var(--bg-1);
@@ -774,7 +779,6 @@ body.is-locked { overflow: hidden; }
     margin-right: -20px;
   }
   .screens-carousel__track { gap: 0; }
-  .screens-carousel__slide { flex: 0 0 100%; border-radius: var(--r-lg); }
 
   .screens-carousel__arrow {
     position: absolute;
@@ -1148,7 +1152,6 @@ body.is-locked { overflow: hidden; }
   /* ---- Hero ---- */
   .hero { padding: 56px 20px 48px; }
   .hero--top { padding-bottom: 24px; }
-  .hero--carousel { padding-top: 0; padding-bottom: 0; }
   .hero-aura { width: 120vw; height: 120vw; }
 
   .hero__eyebrow { margin-bottom: 16px; }
