@@ -726,6 +726,9 @@ body.is-locked { overflow: hidden; }
 .screens-carousel__viewport {
   flex: 1;
   overflow: hidden;
+  border-radius: var(--r-lg);
+  background: var(--bg-3);
+  box-shadow: inset 0 0 32px 10px var(--accent-tint);
 }
 
 .screens-carousel__track {
@@ -740,13 +743,6 @@ body.is-locked { overflow: hidden; }
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  background: var(--bg-3);
-  box-shadow: inset 0 0 32px 10px var(--accent-tint);
-  /* Forces its own compositing layer so the rounded clip doesn't
-     flash square while the track's transform is animating (Chromium). */
-  transform: translateZ(0);
 }
 
 .screens-carousel__slide img {
