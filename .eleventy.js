@@ -1,6 +1,10 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
+  if (process.env.PORT) {
+    eleventyConfig.setServerOptions({ port: Number(process.env.PORT) });
+  }
+
   return {
     dir: {
       input: "src",
