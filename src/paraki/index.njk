@@ -5,7 +5,7 @@ description: Mapeamento colaborativo de bicicletários e paraciclos.
 home: false
 pageLabel: Paraki
 ---
-{% from "macros/components.njk" import audienceCard, step, btn, contactCard %}
+{% from "macros/components.njk" import audienceCard, step, btn, contactBtn, contactCard %}
 
 <section id="hero" class="hero hero--top">
   <div class="hero-aura" aria-hidden="true"></div>
@@ -71,7 +71,7 @@ pageLabel: Paraki
 
 <section id="contato" class="contact-section">
   {% call contactCard(heading="Quer saber mais sobre o Paraki? Fale com a gente.") %}
-    {{ btn("mailto:contato@mavericksoftware.com.br", "fa-solid fa-envelope", "E-mail", "primary") }}
+    {{ contactBtn("fa-solid fa-envelope", "E-mail", "primary", "Paraki") }}
     {{ btn("https://wa.me/5511940035698", "fa-brands fa-whatsapp", "WhatsApp", "secondary") }}
   {% endcall %}
 </section>

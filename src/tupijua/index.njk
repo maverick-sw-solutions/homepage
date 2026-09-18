@@ -5,7 +5,7 @@ description: App de treino e acompanhamento fitness, pronto para virar o seu.
 home: false
 pageLabel: TupiJuá
 ---
-{% from "macros/components.njk" import featureCard, audienceCard, btn, contactCard %}
+{% from "macros/components.njk" import featureCard, audienceCard, btn, contactBtn, contactCard %}
 
 <section id="hero" class="hero">
   <div class="hero-aura" aria-hidden="true"></div>
@@ -55,7 +55,7 @@ pageLabel: TupiJuá
 <section id="contato" class="contact-section">
   {% call contactCard(heading="Quer conversar sobre uma parceria white-label?") %}
     {{ btn("https://wa.me/5511940035698?text=Ol%C3%A1!%20Tenho%20interesse%20em%20uma%20parceria%20white-label%20com%20o%20TupiJu%C3%A1.", "fa-brands fa-whatsapp", "Falar no WhatsApp", "primary") }}
-    {{ btn("mailto:contato@mavericksoftware.com.br?subject=Parceria%20TupiJu%C3%A1", "fa-solid fa-envelope", "Enviar e-mail", "secondary") }}
+    {{ contactBtn("fa-solid fa-envelope", "Enviar e-mail", "secondary", "Parceria TupiJuá") }}
   {% endcall %}
 
   <div class="contact-card contact-card--neutral">

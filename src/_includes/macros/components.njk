@@ -2,6 +2,10 @@
 <a href="{{ href }}" class="btn btn--{{ variant }}"><i class="{{ icon }}"></i> {{ label }}<span class="arrow" aria-hidden="true"></span></a>
 {% endmacro %}
 
+{% macro contactBtn(icon, label, variant="primary", subject="") %}
+<button type="button" class="btn btn--{{ variant }}" data-contact-open{% if subject %} data-contact-subject="{{ subject }}"{% endif %}><i class="{{ icon }}"></i> {{ label }}<span class="arrow" aria-hidden="true"></span></button>
+{% endmacro %}
+
 {% macro projectRow(href, idx, title, badgeText, badgeVariant, desc, image=none) %}
 <a href="{{ href }}" class="prj" data-anim="rise">
   <span class="prj-inner">

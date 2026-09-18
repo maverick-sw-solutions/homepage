@@ -5,7 +5,7 @@ description: Carteira virtual para eventos — carga, consumo e prestação de c
 home: false
 pageLabel: M-ES
 ---
-{% from "macros/components.njk" import featureCard, pill, btn, contactCard %}
+{% from "macros/components.njk" import featureCard, pill, btn, contactBtn, contactCard %}
 
 <section id="hero" class="hero">
   <div class="hero-aura" aria-hidden="true"></div>
@@ -53,6 +53,6 @@ pageLabel: M-ES
 <section id="contato" class="contact-section">
   {% call contactCard(heading="Quer ver o M-ES funcionando?") %}
     {{ btn("https://wa.me/5511940035698?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20demonstra%C3%A7%C3%A3o%20do%20M-ES.", "fa-brands fa-whatsapp", "Solicitar demonstração", "primary") }}
-    {{ btn("mailto:contato@mavericksoftware.com.br?subject=Demonstra%C3%A7%C3%A3o%20M-ES", "fa-solid fa-envelope", "Enviar e-mail", "secondary") }}
+    {{ contactBtn("fa-solid fa-envelope", "Enviar e-mail", "secondary", "Demonstração M-ES") }}
   {% endcall %}
 </section>

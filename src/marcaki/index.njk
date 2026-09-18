@@ -5,7 +5,7 @@ description: Agendamento online para salões, barbearias e clínicas de estétic
 home: false
 pageLabel: Marcaki
 ---
-{% from "macros/components.njk" import featureCard, audienceCard, step, btn, contactCard %}
+{% from "macros/components.njk" import featureCard, audienceCard, step, btn, contactBtn, contactCard %}
 
 <section id="hero" class="hero hero--top">
   <div class="hero-aura" aria-hidden="true"></div>
@@ -80,6 +80,6 @@ pageLabel: Marcaki
 <section id="contato" class="contact-section">
   {% call contactCard(heading="Quer saber mais sobre o Marcaki? Fale com a gente.") %}
     {{ btn("https://marcaki.app", "fa-solid fa-arrow-up-right-from-square", "Ver o Marcaki", "primary") }}
-    {{ btn("mailto:contato@mavericksoftware.com.br?subject=Marcaki", "fa-solid fa-envelope", "Enviar e-mail", "secondary") }}
+    {{ contactBtn("fa-solid fa-envelope", "Enviar e-mail", "secondary", "Marcaki") }}
   {% endcall %}
 </section>

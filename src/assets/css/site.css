@@ -901,6 +901,100 @@ body.is-locked { overflow: hidden; }
   .lightbox__close { top: 12px; right: 12px; }
 }
 
+/* ---- Contact modal ---- */
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+}
+
+.contact-modal[hidden] { display: none; }
+
+.contact-modal__panel {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-2);
+  padding: 32px;
+}
+
+.contact-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-pill);
+  background: var(--bg-1);
+  color: var(--fg-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact-modal__close:hover { background: var(--bg-3); }
+
+.contact-modal__panel h2 { margin: 0 0 6px; padding-right: 40px; font-size: 20px; font-weight: var(--fw-semibold); color: var(--fg-1); }
+.contact-modal__hint { margin: 0 0 24px; font-size: 13px; color: var(--fg-2); }
+
+.contact-modal__form { display: flex; flex-direction: column; gap: 16px; }
+.contact-modal__row { display: flex; gap: 16px; }
+.contact-modal__row .contact-modal__field { flex: 1; min-width: 0; }
+
+.contact-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: var(--fw-medium);
+  color: var(--fg-2);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-uppercase);
+}
+
+.contact-modal__field input,
+.contact-modal__field textarea {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--fw-regular);
+  text-transform: none;
+  letter-spacing: normal;
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line-strong);
+  background: var(--bg-1);
+  color: var(--fg-1);
+}
+
+.contact-modal__field textarea { resize: vertical; min-height: 90px; }
+.contact-modal__field input:focus,
+.contact-modal__field textarea:focus { outline: none; border-color: var(--accent); }
+
+.contact-modal__status { font-size: 13px; min-height: 1em; }
+.contact-modal__status--ok { color: var(--mss-success); }
+.contact-modal__status--err { color: var(--mss-danger, #C62828); }
+
+.contact-modal__submit { align-self: flex-start; }
+
+@media (max-width: 640px) {
+  .contact-modal__panel { padding: 24px; }
+  .contact-modal__row { flex-direction: column; }
+  .contact-modal__submit { width: 100%; justify-content: center; }
+}
+
 /* ---- Steps (Paraki: como funciona) — mono ruler numbering ---- */
 .steps { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 

@@ -5,7 +5,7 @@ description: Software sob medida para problemas reais.
 home: true
 pageLabel: Home
 ---
-{% from "macros/components.njk" import projectRow, btn, contactCard, dataRow, techToken, timelineItem %}
+{% from "macros/components.njk" import projectRow, btn, contactBtn, contactCard, dataRow, techToken, timelineItem %}
 
 <section id="hero" class="hero">
   <div class="hero-aura" aria-hidden="true"></div>
@@ -134,7 +134,7 @@ pageLabel: Home
 
 <section id="contato" class="contact-section">
   {% call contactCard(heading="Heitor Maciel de Vasconcellos Leite", eyebrow="Contato", subtitle="Fundador") %}
-    {{ btn("mailto:contato@mavericksoftware.com.br", "fa-solid fa-envelope", "E-mail", "primary") }}
+    {{ contactBtn("fa-solid fa-envelope", "E-mail", "primary", "Contato pelo site") }}
     {{ btn("https://wa.me/5511940035698", "fa-brands fa-whatsapp", "WhatsApp", "secondary") }}
   {% endcall %}
 </section>
